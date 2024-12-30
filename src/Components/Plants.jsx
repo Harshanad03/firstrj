@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import plantImage1 from "../assets/plant3.png";
 import plantImage2 from "../assets/plant4.png";
@@ -16,11 +17,9 @@ import plantImage13 from "../assets/plant15.png";
 import plantImage14 from "../assets/plant16.png";
 import plantImage15 from "../assets/plant17.png";
 import plantImage16 from "../assets/plant18.png";
-import { Link } from "react-router-dom";
 
 export const Plants = () => {
   const [showMore, setShowMore] = useState(false);
-  const [cart, setCart] = useState([]);
 
   const initialCards = [
     { id: 1, image: plantImage1, title: "Croton Plant", description: "Add a touch of greenery to your home." },
@@ -49,15 +48,10 @@ export const Plants = () => {
   };
 
   const handleAddToCart = (card) => {
-    setCart((prevCart) => [...prevCart, card]);
-    alert('Plant has been added to the cart!');
+    alert("Plant has been added to the cart!");
   };
 
   const displayedCards = showMore ? [...initialCards, ...additionalCards] : initialCards;
-
- 
-
-    
 
   return (
     <div className="plants-container" id="plant">
@@ -84,11 +78,6 @@ export const Plants = () => {
           {showMore ? "Show Less" : "Show More"}
         </button>
       </center>
-
-      {/* Displaying the cart */}
-      <div className="cart-section">
-        {/* Cart content */}
-      </div>
     </div>
   );
 };
