@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import anime from "animejs";
 import plantImage from "../assets/plant2.png";
 import { Navbar } from "./Navbar";
@@ -8,33 +8,44 @@ import { Plants } from "./Plants";
 import { Contactus } from "./Contactus";
 
 export const Home = () => {
-  useEffect(() => {
+  const [showScrollButton, setShowScrollButton] = useState(false);
 
+  useEffect(() => {
     const handleScroll = () => {
-      const hometext = document.querySelector('.text-container');
+      const hometext = document.querySelector(".text-container");
       const rect = hometext.getBoundingClientRect();
-      
-      
+
       if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
         anime({
-          targets: '.text-container',
-          translateY: [50, 0], 
-       
-          easing: 'easeOutQuad',
-          duration: 1000, 
+          targets: ".text-container",
+          translateY: [50, 0],
+          easing: "easeOutQuad",
+          duration: 1000,
         });
+      }
+
+      // Show the scroll-to-top button when scrolled down
+      if (window.scrollY > 300) {
+        setShowScrollButton(true);
+      } else {
+        setShowScrollButton(false);
       }
     };
 
     handleScroll();
 
-    
-    window.addEventListener('scroll', handleScroll);
-
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <>
@@ -57,6 +68,13 @@ export const Home = () => {
       <hr />
       <Contactus />
       <Footer />
+
+      {/* Up Arrow Button */}
+      {showScrollButton && (
+        <button className="scroll-to-top" onClick={scrollToTop}>
+          &#8679;
+        </button>
+      )}
     </>
   );
 };

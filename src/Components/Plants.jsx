@@ -60,7 +60,7 @@ export const Plants = () => {
     
 
   return (
-    <div className="plants-container">
+    <div className="plants-container" id="plant">
       <div className="card-container">
         {displayedCards.map((card) => (
           <div key={card.id} className="card">

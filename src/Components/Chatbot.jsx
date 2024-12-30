@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { Link } from "react-router-dom";
 
 export function Chatbot() {
   const [prompt, setPrompt] = useState("");
@@ -25,6 +26,14 @@ export function Chatbot() {
       setResponse("Failed to get a response. Please try again.");
     } finally {
       setLoading(false);
+      setPrompt(""); // Clear the input box after sending
+    }
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      handleGenerate();
     }
   };
 
@@ -38,6 +47,7 @@ export function Chatbot() {
             placeholder="Ask your Questions here.."
             value={prompt}
             onChange={(e) => setPrompt(e.target.value)}
+            onKeyDown={handleKeyDown}
           />
           <button
             className="chatbot-button"
@@ -51,6 +61,9 @@ export function Chatbot() {
             <p>{response}</p>
           </div>
         </div>
+        <Link to="/">
+          <button className="explore-button">Back to Home</button>
+        </Link>
       </center>
     </>
   );

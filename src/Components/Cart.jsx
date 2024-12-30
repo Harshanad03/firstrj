@@ -21,7 +21,7 @@ export const Cart = () => {
           <h1>Bring Greenery to Your Home</h1>
           <p>Discover our collection of beautiful, low-maintenance plants.</p>
           <Link to ="/">
-          <button className="explore-button">Explore Plants</button>
+          <button className="explore-button">Back to Home</button>
           </Link>
         </div>
         
