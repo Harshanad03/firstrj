@@ -1,38 +1,397 @@
-.App {
-  text-align: center;
+/* Global Styles */
+:root {
+  --background-color: #112012; /* Dark mode background color */
+  --text-color: #c4ed2f; /* Dark mode text color */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Light Mode Variables */
+.light-mode {
+  --background-color: #ffffff; /* Light mode background color */
+  --text-color: #3e4a0f; /* Light mode text color */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Body Styling */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+.hometext {
+  display: inline-block;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Navigation Bar Styling */
+.nav {
+  position: fixed;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 1rem;
+  background-color: #112012;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.c3 {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.brand {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  margin-right: auto;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.c3 li:not(:first-child) {
+  margin-left: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.c3 li:first-child {
+  margin-right: auto;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+/* Theme Toggle Button Styling */
+.theme-toggle {
+  background-color: var(--text-color);
+  color: var(--background-color);
+  border: 2px solid var(--text-color);
+  border-radius: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Main Content Styling */
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  background-color: var(--background-color);
+  height: calc(110vh - 30px);
+  box-sizing: border-box;
+}
+
+.text-container {
+  display: inline-block;
+  max-width: 50%;
+
+  font-size: 2.9rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.text-container h1 {
+  line-height: 1;
+  margin-bottom: 2rem;
+}
+
+.text1 {
+  margin-top: 1rem;
+  font-weight: lighter;
+  color: rgb(175, 170, 170);
+  font-size: 27px;
+}
+
+/* Card Section Styling */
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  flex-wrap: wrap;
+  background-color: var(--background-color);
+}
+
+/* Card Styling */
+.card {
+  background: linear-gradient(135deg, #3e4a0f, #112012); /* Colorful gradient */
+  border-radius: 20px;
+  box-shadow: 0 10px 20px #090909;
+  overflow: hidden;
+  width: 300px;
+  text-align: center;
+  margin: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 25px black;
+}
+
+.card-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-bottom: 3px solid #f3eeee;
+}
+
+.card-content {
+  padding: 20px;
+  color: #c4ed2f;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.card-description {
+  font-size: 0.9rem;
+  color: #e0e0e0;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.buy-button {
+  background-color: #3e4a0f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 5px 10px black;
+}
+
+.buy-button:hover {
+  background-color: #9dbd1d;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(37, 35, 35, 0.6);
+}
+
+/* About Us Section */
+.abouttxt {
+  margin-left: 8rem;
+  margin-right: 8rem;
+  align-items: center;
+  color: rgb(175, 170, 170);
+  font-size: 20px;
+}
+
+.abouttxt1 {
+  display: inline-block;
+}
+
+.cont {
+  display: inline-block;
+}
+
+.copyryt {
+  color: rgb(175, 170, 170);
+  margin-bottom: -70px;
+}
+
+/* Footer Section Styling */
+.footerpic {
+  width: 100%; /* Full width of the container */
+  height: 150px; /* Set height of the footer area */
+  background-image: url("./assets/plant28.png"); /* Use the image */
+  background-repeat: repeat-x; /* Repeat horizontally */
+  background-size: auto; /* Maintain the original size of the image */
+  background-position: top; /* Align the image at the top */
+}
+
+/* About Picture Styling */
+.aboutpic {
+  height: 300px;
+  width: 300px;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.hero-banner {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.explore-button {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+.explore-button:hover {
+  background-color: #218838;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #112012;
+  color: var(--text-color);
+}
+
+.c3 {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  align-items: center;
+}
+
+.c3 li {
+  margin: 0 10px;
+}
+
+.search-container {
+  flex-grow: 1; /* Ensures it grows to fill available space */
+  text-align: center; /* Centers the search bar */
+}
+
+.search-bar {
+  width: 50%; /* Adjust this width as needed */
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  outline: none;
+}
+
+.theme-toggle {
+  background-color: var(--text-color);
+  color: var(--background-color);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* General container styles */
+.chatbot-container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  font-family: "Roboto", sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  
+}
+
+/* Header styling */
+.chatbot-container h1 {
+  color: #333;
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Textarea styling */
+.chatbot-textarea {
+  width: 95%;
+  height: 120px;
+  margin-bottom: 15px;
+  padding: 15px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  resize: none;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Button styling */
+.chatbot-button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #3e4a0f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.chatbot-button:hover {
+  background-color: #c4ed2f;
+}
+
+.chatbot-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Response section */
+.chatbot-response {
+  margin-top: 20px;
+  background-color: #e8f5e9;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid #c8e6c9;
+  font-size: 16px;
+  color: #388e3c;
+}
+
+.chatbot-response h3 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  color: #2e7d32;
+}
+
+/* Mobile responsive design */
+@media (max-width: 768px) {
+  .chatbot-container {
+    margin: 20px;
+    padding: 15px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .chatbot-button {
+    font-size: 14px;
+  }
+
+  .chatbot-textarea {
+    font-size: 14px;
   }
 }

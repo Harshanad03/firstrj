@@ -1,0 +1,57 @@
+import React, { useState } from "react";
+import { GoogleGenerativeAI } from "@google/generative-ai";
+
+export function Chatbot() {
+  const [prompt, setPrompt] = useState("");
+  const [response, setResponse] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const geminiApiKey = "AIzaSyBkWc7tGDCaoG49HMXW7nj8bxhFt-0akSA"; // Replace with your actual API key
+  const genAI = new GoogleGenerativeAI(geminiApiKey);
+  const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+
+  const handleGenerate = async () => {
+    if (!prompt.trim()) {
+      alert("Please enter a prompt!");
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const result = await model.generateContent(prompt);
+      setResponse(result.response.text());
+    } catch (error) {
+      console.error("Error calling Gemini API:", error);
+      setResponse("Failed to get a response. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  return (
+    <>
+      <center>
+        <div className="chatbot-container">
+          <h1>Plantify's Chatbot</h1>
+          <textarea
+            className="chatbot-textarea"
+            placeholder="Ask your Questions here.."
+            value={prompt}
+            onChange={(e) => setPrompt(e.target.value)}
+          />
+          <button
+            className="chatbot-button"
+            onClick={handleGenerate}
+            disabled={loading}
+          >
+            {loading ? "Loading..." : "Send"}
+          </button>
+          <div className="chatbot-response">
+            <h3>Response:</h3>
+            <p>{response}</p>
+          </div>
+        </div>
+      </center>
+    </>
+  );
+}
