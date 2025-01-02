@@ -531,7 +531,7 @@ a {
     flex-direction: column; /* Stack links vertically */
     justify-content: center; /* Center links */
     align-items: center; /* Align links to the center */
-    background-color: var(--background-color);
+    background-color: #112012;
     position: absolute;
     top: 100%;
     left: 0;
