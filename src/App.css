@@ -23,6 +23,7 @@ body {
 }
 .hometext {
   display: inline-block;
+  margin-top: 5rem;
 }
 
 /* Navigation Bar Styling */
