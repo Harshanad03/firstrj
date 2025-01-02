@@ -422,3 +422,236 @@ a {
 .scroll-to-top:focus {
   outline: none;
 }
+/* Hamburger Button Styling */
+.hamburger-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--text-color);
+  cursor: pointer;
+  display: none; /* Hidden by default */
+}
+
+/* Mobile Navigation Styling */
+@media (max-width: 768px) {
+  .hamburger-btn {
+    display: block; /* Show hamburger button on small screens */
+  }
+
+  .c3 {
+    display: none; /* Hide navigation links by default */
+    flex-direction: column; /* Stack links vertically */
+    background-color: var(--background-color);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+  }
+
+  .c3.menu-open {
+    display: flex; /* Show menu when open */
+  }
+
+  .c3 li {
+    margin: 0.5rem 0;
+  }
+}
+/* Navigation Bar Styling */
+.nav {
+  position: fixed;
+  display: flex;
+  justify-content: space-between; /* Space between brand and button */
+  align-items: center;
+  padding: 1rem;
+  background-color: #112012;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+/* Brand Styling */
+.brand {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  color: white;
+}
+
+/* Hamburger Button Styling */
+.hamburger-btn {
+  position: absolute; /* Positioned relative to the nav */
+  top: 1rem; /* Adjust as needed for spacing */
+  right: 1rem; /* Align to the top-right corner */
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--text-color);
+  cursor: pointer;
+  display: none; /* Hidden by default for larger screens */
+}
+
+/* Mobile Navigation Styling */
+@media (max-width: 768px) {
+  .hamburger-btn {
+    display: block; /* Show hamburger button on small screens */
+  }
+
+  .c3 {
+    display: none; /* Hide navigation links by default */
+    flex-direction: column; /* Stack links vertically */
+    background-color: var(--background-color);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+  }
+
+  .c3.menu-open {
+    display: flex; /* Show menu when open */
+  }
+
+  .c3 li {
+    margin: 0.5rem 0;
+  }
+}
+/* Mobile Navigation Styling */
+@media (max-width: 768px) {
+  .hamburger-btn {
+    display: block; /* Show hamburger button on small screens */
+  }
+
+  .c3 {
+    display: none; /* Hide navigation links by default */
+    flex-direction: column; /* Stack links vertically */
+    justify-content: center; /* Center links */
+    align-items: center; /* Align links to the center */
+    background-color: var(--background-color);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+  }
+
+  .c3.menu-open {
+    display: flex; /* Show menu when open */
+  }
+
+  .c3 li {
+    margin: 0.5rem 0; /* Add some spacing between items */
+    width: 100%; /* Ensure full-width items */
+    text-align: center; /* Center the text */
+  }
+
+  .c3 li a {
+    display: block; /* Ensure clickable area is full-width */
+    padding: 0.5rem 0; /* Add padding for better tap targets */
+  }
+}
+/* General Styling */
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  background-color: var(--background-color);
+  height: calc(110vh - 30px);
+  box-sizing: border-box;
+}
+
+.text-container {
+  display: inline-block;
+  max-width: 50%;
+  font-size: 2.9rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.text1 {
+  margin-top: 1rem;
+  font-weight: lighter;
+  color: rgb(175, 170, 170);
+  font-size: 27px;
+}
+
+.plt1 {
+  max-width: 45%;
+  height: auto;
+  display: block;
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items */
+    padding: 1rem;
+  }
+
+  .text-container {
+    max-width: 100%; /* Full width on mobile */
+    text-align: center; /* Center text */
+    font-size: 1.8rem; /* Adjust font size for mobile */
+    margin-bottom: 1rem; /* Add spacing below text */
+  }
+
+  .text1 {
+    font-size: 1rem; /* Smaller font for mobile */
+  }
+
+  .plt1 {
+    max-width: 80%; /* Adjust image size */
+    height: auto;
+    margin-top: 1rem;
+  }
+
+  .scroll-to-top {
+    bottom: 10px; /* Adjust position for smaller screens */
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+}
+/* About Us Section Styling */
+.about {
+  margin: 2rem 8rem; /* Default margins for desktop */
+  text-align: center;
+}
+
+.abouttxt1 {
+  font-size: 2rem;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+}
+
+.abouttxt {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: rgb(175, 170, 170);
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+  .about {
+    margin: 1rem; /* Reduced margins for smaller screens */
+    padding: 1rem;
+  }
+
+  .abouttxt1 {
+    font-size: 1.5rem; /* Adjusted font size */
+  }
+
+  .abouttxt {
+    font-size: 1rem; /* Smaller font for better readability */
+    line-height: 1.4; /* Adjust line height */
+  }
+}
