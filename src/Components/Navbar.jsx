@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 export function Navbar() {
   const [isDarkMode, setIsDarkMode] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   // Effect to update CSS variables on mount and when theme changes
   useEffect(() => {
@@ -22,28 +23,31 @@ export function Navbar() {
     setIsDarkMode((prevMode) => !prevMode);
   };
 
+  // Toggle Menu Function
+  const toggleMenu = () => {
+    setMenuOpen((prevOpen) => !prevOpen);
+  };
+
   return (
-    
     <nav className="nav">
-      <ul className="c3">
-        <li>
-          <a className="brand" href="#home">Plantify</a>
-        </li>
-        <li className="search-container">
-          
-          <input
-            type="text"
-            placeholder="Search plants..."
-            className="search-bar"
-          />
-        </li>
+      <div className="nav-header">
+        {/* Brand Name */}
+        <a className="brand" href="#home">Plantify</a>
+        
+        {/* Hamburger Button */}
+        <button className="hamburger-btn" onClick={toggleMenu}>
+          ☰
+        </button>
+      </div>
+      
+      {/* Navigation Links */}
+      <ul className={`c3 ${menuOpen ? "menu-open" : ""}`}>
         <li>
           <a href="#home">Home</a>
         </li>
         <li>
           <a href="#plant">Plant</a>
         </li>
-       
         <li>
           <a href="#aboutus">About Us</a>
         </li>
@@ -51,14 +55,10 @@ export function Navbar() {
           <a href="#contact">Contact Us</a>
         </li>
         <li>
-          <Link to="/cart">
-            <a href="#cart">Cart</a>
-          </Link>
+          <Link to="/cart">Cart</Link>
         </li>
         <li>
-          <Link to="/chatbot">
-            <a href="#chatbot">Chatbot</a>
-          </Link>
+          <Link to="/chatbot">Chatbot</Link>
         </li>
         <li>
           <button className="theme-toggle" onClick={toggleTheme}>
