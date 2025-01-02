@@ -620,37 +620,5 @@ a {
     font-size: 1rem;
   }
 }
-/* About Us Section Styling */
-.about {
-  margin: 2rem 8rem; /* Default margins for desktop */
-  text-align: center;
-}
 
-.abouttxt1 {
-  font-size: 2rem;
-  color: var(--text-color);
-  margin-bottom: 1rem;
-}
 
-.abouttxt {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  color: rgb(175, 170, 170);
-}
-
-/* Mobile View Adjustments */
-@media (max-width: 768px) {
-  .about {
-    margin: 1rem; /* Reduced margins for smaller screens */
-    padding: 1rem;
-  }
-
-  .abouttxt1 {
-    font-size: 1.5rem; /* Adjusted font size */
-  }
-
-  .abouttxt {
-    font-size: 1rem; /* Smaller font for better readability */
-    line-height: 1.4; /* Adjust line height */
-  }
-}
