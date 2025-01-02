@@ -594,22 +594,25 @@ a {
     flex-direction: column; /* Stack elements vertically */
     align-items: center; /* Center items */
     padding: 1rem;
+    gap: 0.1 rem; /* Reduce space between elements */
   }
 
   .text-container {
     max-width: 100%; /* Full width on mobile */
     text-align: center; /* Center text */
     font-size: 1.8rem; /* Adjust font size for mobile */
-    margin-bottom: 1rem; /* Add spacing below text */
+    margin-bottom: 0.5rem; /* Reduce spacing below text */
   }
 
   .text1 {
     font-size: 1rem; /* Smaller font for mobile */
+    margin-top: 0.5rem; /* Reduce top margin */
   }
 
   .plt1 {
-    max-width: 100%; /* Adjust image size */
+    max-width: 90%; /* Slightly smaller image width */
     height: auto;
+    margin-top: 0.5rem; /* Reduce top margin */
   }
 
   .scroll-to-top {
