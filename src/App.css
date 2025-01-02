@@ -608,7 +608,7 @@ a {
   }
 
   .plt1 {
-    max-width: 80%; /* Adjust image size */
+    max-width: 100%; /* Adjust image size */
     height: auto;
   }
 
